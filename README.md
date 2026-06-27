@@ -166,7 +166,7 @@ pytest tests/test_dashboard.py::test_welcome_heading_shows_username -v
 | **Error Type** | `TimeoutException` |
 | **Priority** | 🔴 High |
 
-![BUG-001](screenshots/FAIL_Welcome_back_heading_shows_user_s_name_1782545901_ANNOTATED.png)
+![BUG-001](https://github.com/irfanulkabirhira/-Software-Testing-Lab-Automation-QA-Project/blob/2952dd7700b0ee9ab65749f580917238be2317d3/FAIL_Welcome_back_heading_shows_user's_name_1782545901_ANNOTATED.png)
 
 ---
 
