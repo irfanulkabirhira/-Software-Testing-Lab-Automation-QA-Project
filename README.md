@@ -49,16 +49,37 @@ git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 ```
 
-### 2. Install dependencies
+### 2. Create virtual environment
 ```bash
-pip install selenium pytest pillow
+python -m venv venv
 ```
 
-### 3. Install ChromeDriver
+### 3. Activate virtual environment
+
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+**Mac / Linux:**
+```bash
+source venv/bin/activate
+```
+
+> You should see `(venv)` appear at the start of your terminal line — that means it's active.
+
+### 4. Install all required packages
+```bash
+pip install pytest selenium webdriver-manager
+pip install pytest-html
+pip install pillow
+```
+
+### 5. Install ChromeDriver
 Make sure your ChromeDriver version matches your Chrome browser.  
 Download from: [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)
 
-### 4. Configure your test user
+### 6. Configure your test user
 Open `config.py` and update before each run:
 ```python
 FULL_NAME     = "Your Test User Name"
@@ -72,22 +93,35 @@ PROFILE_IMAGE = r"C:\path\to\your\image.jpeg"   # full path to a profile image
 
 ## ▶️ Running the Tests
 
+> ⚠️ Make sure your virtual environment is activated first — you should see `(venv)` in your terminal.
+
 ### Run everything with one command:
 ```bash
 python run_all.py
 ```
 
+### Run all tests with pytest (shows live print output):
+```bash
+pytest -s tests/
+```
+
 ### Run a single page only:
 ```bash
-pytest tests/test_registration.py -v
-pytest tests/test_login.py -v
-pytest tests/test_dashboard.py -v
+pytest -s tests/test_registration.py
+pytest -s tests/test_login.py
+pytest -s tests/test_dashboard.py
 ```
 
 ### Run a single test case:
 ```bash
-pytest tests/test_dashboard.py::test_welcome_heading_shows_username -v
+pytest -s tests/test_dashboard.py::test_welcome_heading_shows_username
 ```
+
+### Generate an HTML report:
+```bash
+pytest -s tests/ --html=report.html
+```
+> Opens `report.html` in your browser — shows full pass/fail details per test case.
 
 ---
 
@@ -166,7 +200,7 @@ pytest tests/test_dashboard.py::test_welcome_heading_shows_username -v
 | **Error Type** | `TimeoutException` |
 | **Priority** | 🔴 High |
 
-![BUG-001](https://github.com/irfanulkabirhira/-Software-Testing-Lab-Automation-QA-Project/blob/2952dd7700b0ee9ab65749f580917238be2317d3/FAIL_Welcome_back_heading_shows_user's_name_1782545901_ANNOTATED.png)
+![BUG-001](screenshots/FAIL_Welcome_back_heading_shows_user_s_name_1782545901_ANNOTATED.png)
 
 ---
 
@@ -181,7 +215,7 @@ pytest tests/test_dashboard.py::test_welcome_heading_shows_username -v
 | **Error Type** | `AssertionError` |
 | **Priority** | 🔴 High |
 
-![BUG-002](https://github.com/irfanulkabirhira/-Software-Testing-Lab-Automation-QA-Project/blob/cdb752052f8ecddf3786485f3abc58415cebebd1/FAIL_Profile_field_-_Email_Address_1782545902_ANNOTATED.png)
+![BUG-002](screenshots/FAIL_Profile_field_-_Email_Address_1782545902_ANNOTATED.png)
 
 ---
 
