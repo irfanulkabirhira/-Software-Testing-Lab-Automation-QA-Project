@@ -8,6 +8,7 @@ built with **Python + Selenium + pytest** as part of a Software Testing Lab assi
 ## 🌐 Live Website
 
 🔗 **[https://events-activities-frontend.vercel.app/](https://events-activities-frontend.vercel.app/)**
+🔗 **Code Vide Link : https://youtu.be/Tq8CJUyJORM?si=Jdo17fkoBbZgo1RF**
 
 ---
 
